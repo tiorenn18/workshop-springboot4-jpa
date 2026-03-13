@@ -50,6 +50,15 @@ public class Testconfig implements CommandLineRunner {
         categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
         productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 
+        p1.getCategories().add(cat2);
+        p2.getCategories().add(cat1);
+        p2.getCategories().add(cat3);
+        p3.getCategories().add(cat3);
+        p4.getCategories().add(cat3);
+        p5.getCategories().add(cat2);   
+
+        productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));   
+
         User u1 = new User(null, "Maria brown", "maria@gmail.com", "999871233", "1010");
         User u2 = new User(null, "AlexGreen", "alex@gmail.com", "999767634", "1234");
 
